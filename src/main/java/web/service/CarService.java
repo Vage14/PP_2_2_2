@@ -29,5 +29,12 @@ public class CarService {
     public List<Car> getCars(int count) {
         return cars.subList(0, Math.min(count, cars.size()));
     }
+
+    public List<Car> getCarsByCount(Integer count) {
+        if (count == null || count >= 5) {
+            return getAllCars();
+        }
+        return getCars(count);
+    }
 }
 
